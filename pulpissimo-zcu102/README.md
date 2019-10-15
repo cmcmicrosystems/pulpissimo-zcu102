@@ -1,5 +1,5 @@
 # PULPissimo on the Xilinx ZCU102 Board
-[\[Datasheet\]](https://www.xilinx.com/support/documentation/boards_and_kits/zcu104/ug1182-zcu102-eval-bd.pdf)
+[\[Datasheet\]](https://www.xilinx.com/support/documentation/boards_and_kits/zcu102/ug1182-zcu102-eval-bd.pdf)
 
 ## Bitstream Generation
 In the fpga folder, run
