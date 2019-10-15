@@ -13,10 +13,10 @@ CMC ported this platform to the Xilinx ZCU102 evaluation board based on the FPGA
  **JTAG programming cable:** it is required to download and debug an application on Pulpissimo platform. Digilent JTAG HS2 programming cable is used in this case
 
  **Software tools and environment:**
- *RISC-V toolchain: cross-compiling tools for creating applications. more information can be found here: https://github.com/pulp-platform/pulp-riscv-gnu-toolchain
-     *Pulp SDK: runtime environment for creating application running on Pulpissimo platform. More information can be found here:https://github.com/pulp-platform/pulp-sdk
-     *Pulpissimo platform package: the tools and source files required to compile the Pulpissimo platform. More information can be found here: https://github.com/pulp-platform/pulpissimo
-     *Minicom: a terminal used for communication between the host and the Pulpissimo platform.
+  *RISC-V toolchain: cross-compiling tools for creating applications. more information can be found here: https://github.com/pulp-platform/pulp-riscv-gnu-toolchain
+  *Pulp SDK: runtime environment for creating application running on Pulpissimo platform. More information can be found here:https://github.com/pulp-platform/pulp-sdk
+  *Pulpissimo platform package: the tools and source files required to compile the Pulpissimo platform. More information can be found here: https://github.com/pulp-platform/pulpissimo
+  *Minicom: a terminal used for communication between the host and the Pulpissimo platform.
 
 Please note: most of the instructions provided below are duplicated from the Pulp-platform GitHub pages. This README brings the instructions that are provided in different Pulp-platform GitHub pages into one place for a quick and convenient getting started with Pulpissimo for ZCU102. You are encouraged to visit Pulp-platform GitHub for more details. 
 
