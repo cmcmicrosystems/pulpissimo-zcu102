@@ -1,8 +1,8 @@
 # RISCV-Pulpissimo-FPGA-Implementation-for-ZCU102
 
 This README provides instructions on how to setup the environment to compile the Pulpissimo platform for RTL simulation and compile the pulpissimo fpga platform and configure it on the Xilinx ZCU102 evaluation board. Pulpissimo is a 32-bit RI5CY (a RISC-V compatible core ) single-core System-on-a-Chip developed by the PULP team (Parallel processing Ultra-low Power platform).
-For more information about Pulpissimo, please visit [\[Pulpissimo on github\]](https://github.com/pulp-platform/pulpissimo).
-For more information about PULP, please visit [[\PULP web site\]](https://pulp-platform.org/). 
+For more information about Pulpissimo, please visit [Pulpissimo on github](https://github.com/pulp-platform/pulpissimo).
+For more information about PULP, please visit [PULP web site](https://pulp-platform.org/). 
 
 CMC ported this platform to the Xilinx ZCU102 evaluation board based on the FPGA implementation for Xilinx ZCU104 provided by the PULP team. The Pulpissimo on ZCU102 is tested with a “hello world” application.
 
@@ -20,15 +20,19 @@ CMC ported this platform to the Xilinx ZCU102 evaluation board based on the FPGA
 
 Please note: most of the instructions provided below are duplicated from the Pulp-platform GitHub pages. This README brings the instructions that are provided in different Pulp-platform GitHub pages into one place for a quick and convenient getting started with Pulpissimo for ZCU102. You are encouraged to visit Pulp-platform GitHub for more details. 
 
+## Download CMC Pulpissimo FPGA Implementation for ZCU102
+```
+$git clone https://github.com/cmcmicrosystems/riscv.git
+```
 ## Installing Linux dependency 
 Please install the following dependency on your host Ubuntu Linux:
 
 ```
-$ sudo apt install git python3-pip python-pip gawk texinfo libgmp-dev libmpfr-dev libmpc-dev swig3.0 libjpeg-dev lsb-core doxygen python-sphinx sox graphicsmagick-libmagick-dev-compat libsdl2-dev libswitch-perl libftdi1-dev cmake scons libsndfile1-dev
+$sudo apt install git python3-pip python-pip gawk texinfo libgmp-dev libmpfr-dev libmpc-dev swig3.0 libjpeg-dev lsb-core doxygen python-sphinx sox graphicsmagick-libmagick-dev-compat libsdl2-dev libswitch-perl libftdi1-dev cmake scons libsndfile1-dev
 
-$ sudo pip3 install artifactory twisted prettytable sqlalchemy pyelftools openpyxl xlsxwriter pyyaml numpy configparser pyvcd
+$sudo pip3 install artifactory twisted prettytable sqlalchemy pyelftools openpyxl xlsxwriter pyyaml numpy configparser pyvcd
 
-$ sudo pip2 install configparser
+$sudo pip2 install configparser
 ```
 Please note: the default gcc version should be 5. Other version might make the build failed.
  
@@ -51,8 +55,8 @@ $export PATH=”/opt/riscv/bin:$PATH”
 **Build and Install Newlib cross-compiler for Pulp**
 ```
 $cd pulp-riscv-gnu-toolchain $ ./configure –prefix=/opt/riscv –with-arch=rv32imc –with-cmodel=medlow –enable-multilib
-$ make $./configure –prefix=/opt/riscv
-$ make
+$make $./configure –prefix=/opt/riscv
+$make
 ```
 You should now have riscv-gcc tools installed under /opt/riscv.
 
@@ -72,19 +76,18 @@ $export PULP_RISCV_GCC_TOOLCHAIN=”/opt/riscv/bin”
 ```
 Copy zcu102.sh to ~/pulpissimo/pulp-sdk/configs/fpgas/puplissimo/ as following:
 ```
-$cp /zcu102.sh ~/pulpissimo/pulp-sdk/configs/fpgas/pulpissimo/
+$cp ~/riscv/zcu102.sh ~/pulpissimo/pulp-sdk/configs/fpgas/pulpissimo/
 ```
 **Select target and platform, and Build SDK**
 ```
 $source configs/pulpissimo.sh
 $source configs/fpgas/pulpissimo/zcu102.sh
-$ make all
+$make all
 ```
 ## ZCU102 FPGA Implementation
 
-**Download pulipissimo-zcu102**
+**Copy pulipissimo-zcu102 Directory**
 ```
-$git clone https://github.com/cmcmicrosystems/riscv.git
 $cp -r ~/riscv/pulpissimo-zcu102 ~/pulpissimo/fpga/
 ```
 In order to generate the PULPissimo bitstream for a supported target FPGA board, first generate the necessary synthesis include scripts by starting the update-ips script in the pulpissimo root directory:
@@ -114,7 +117,7 @@ In the pulp-sdk directory, issue the following commands:
 $source configs/pulpissimo.sh
 $source configs/fpgas/pulpissimo/zcu102.sh
 $make env
-$ source sourceme.sh
+$source sourceme.sh
 $cd hello
 $make clean all
 ```
