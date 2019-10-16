@@ -149,10 +149,10 @@ $riscv32-unknown-elf-gdb ~/pulpissimo/pulp-sdk/hello/build/pulpissimo/test/test
 ```
 In gdb, run:
 ```
-(gdb) target remote localhost:3333
+(gdb)target remote localhost:3333
 (gdb)load
-(gdb) b main
+(gdb)b main
 (gdb)list
-(gdb) continue
+(gdb)continue
 ```
 You should see “hello world!” in terminal 1 at this point.
