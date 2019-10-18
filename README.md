@@ -86,9 +86,10 @@ $make all
 ```
 ## ZCU102 FPGA Implementation
 
-**Copy pulipissimo-zcu102 Directory**
+**Copy relevant folder and files**
 ```
 $cp -r ~/riscv/pulpissimo-zcu102 ~/pulpissimo/fpga/
+$cp ~/riscv/Makefile ~/pulpissimo/fpga    # this step will overwrite the exiting Makefile in the fpga folder
 ```
 In order to generate the PULPissimo bitstream for a supported target FPGA board, first generate the necessary synthesis include scripts by starting the update-ips script in the pulpissimo root directory:
 ```
