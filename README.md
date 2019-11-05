@@ -9,7 +9,7 @@ This README provides instructions on how to setup the environment to compile the
 For more information about Pulpissimo, please visit [Pulpissimo on github](https://github.com/pulp-platform/pulpissimo).
 For more information about PULP, please visit [PULP web site](https://pulp-platform.org/). 
 
-CMC ported the pulpissimo platform to the Xilinx ZCU102 evaluation board based on the FPGA implementations for other FPGA boards provided by the PULP team. CMC has contributed the pulpissimo-zcu102 back to the Pulpissimo github. Therefore, users can obtain the pulpissimo-zcu102 either from the Pulpissimo github repository (https://github.com/pulp-platform/pulpissimo) or from this repository. The "hello world" application used for testing the pulpissimo-zcu102 is only available from this repository. 
+CMC ported the pulpissimo platform to the Xilinx ZCU102 evaluation board based on the FPGA implementations for other FPGA boards provided by the PULP team. And this development has been merged into the master branch of the pulpissimo github repository(https://github.com/pulp-platform/pulpissimo). Therefore, users can obtain the pulpissimo-zcu102 from either the Pulpissimo github repository or from this repository. The "hello world" application used for testing the pulpissimo-zcu102 is only available from this repository. 
 
 
 ## System Requirements
