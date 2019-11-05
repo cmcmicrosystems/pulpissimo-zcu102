@@ -2,14 +2,15 @@
 
 *Note:*
 - *CMC clients may submit their questions through CMC's online support form to get timely response.*
-- *Further development work relavent to RISCV on zcu102 from the community is welcome to release through CMC's github.You may contribute back to this github repository by submitting a pull request.*
+- *Further development work relavent to RISC-V on zcu102 from the community is welcome to release through CMC's github.You may contribute back to this github repository by submitting a pull request.*
 - *CMC's clients are welcome to release their open source projects through CMC's github if they are willing share it with the community. Contact CMC for details.*
 ##
-This README provides instructions on how to setup the environment to compile the Pulpissimo platform for RTL simulation and compile the pulpissimo fpga platform and configure it on the Xilinx ZCU102 evaluation board. Pulpissimo is a 32-bit RI5CY (a RISC-V compatible core ) single-core System-on-a-Chip developed by the PULP team (Parallel processing Ultra-low Power platform).
+This README provides instructions on how to setup the environment to compile the pulpissimo fpga platform and configure it on the Xilinx ZCU102 evaluation board. Pulpissimo is a 32-bit RI5CY (a RISC-V compatible core ) single-core System-on-a-Chip developed by the PULP team (Parallel processing Ultra-low Power platform).
 For more information about Pulpissimo, please visit [Pulpissimo on github](https://github.com/pulp-platform/pulpissimo).
 For more information about PULP, please visit [PULP web site](https://pulp-platform.org/). 
 
-CMC ported this platform to the Xilinx ZCU102 evaluation board based on the FPGA implementation for Xilinx ZCU104 provided by the PULP team. The Pulpissimo on ZCU102 is tested with a “hello world” application.
+CMC ported the pulpissimo platform to the Xilinx ZCU102 evaluation board based on the FPGA implementations for other FPGA boards provided by the PULP team. CMC has contributed the ulpissimo-zcu102 back to the Pulpissimo github. Therefore, users can obtain the pulpissimo-zcu102 either from the Pulpissimo github repository (https://github.com/pulp-platform/pulpissimo) or from this repository. The "hello world" application used for testing the pulpissimo-zcu102 is only available from this repository. 
+
 
 ## System Requirements
 
@@ -27,7 +28,7 @@ Please note: most of the instructions provided below are duplicated from the Pul
 
 ## Download CMC Pulpissimo FPGA Implementation for ZCU102
 ```
-$git clone https://github.com/cmcmicrosystems/riscv.git
+$git clone https://github.com/cmcmicrosystems/pulpissimo-zcu102.git
 ```
 ## Installing Linux dependency 
 Please install the following dependency on your host Ubuntu Linux:
@@ -79,9 +80,9 @@ $git clone https://github.com/pulp-platform/pulp-sdk.git
 $cd pulp-sdk
 $export PULP_RISCV_GCC_TOOLCHAIN=”/opt/riscv/bin”
 ```
-Copy zcu102.sh to ~/pulpissimo/pulp-sdk/configs/fpgas/puplissimo/ as following:
+Copy the zcu102.sh to ~/pulpissimo/pulp-sdk/configs/fpgas/puplissimo/ as following:
 ```
-$cp ~/riscv/zcu102.sh ~/pulpissimo/pulp-sdk/configs/fpgas/pulpissimo/
+$cp ~/pulpissimo-zcu102/zcu102.sh ~/pulpissimo/pulp-sdk/configs/fpgas/pulpissimo/
 ```
 **Select target and platform, and Build SDK**
 ```
@@ -93,8 +94,7 @@ $make all
 
 **Copy relevant folder and files**
 ```
-$cp -r ~/riscv/pulpissimo-zcu102 ~/pulpissimo/fpga/
-$cp ~/riscv/Makefile ~/pulpissimo/fpga    # this step will overwrite the exiting Makefile in the fpga folder
+$cp ~/pulpissimo-zcu102/Makefile ~/pulpissimo/fpga    # this step will overwrite the exiting Makefile in the fpga folder
 ```
 In order to generate the PULPissimo bitstream for a supported target FPGA board, first generate the necessary synthesis include scripts by starting the update-ips script in the pulpissimo root directory:
 ```
@@ -116,7 +116,7 @@ You should find the pulpissimo-zcu102.bit generated under the current directory.
 ## Build Hello World Application
 Copy the “hello” application example to pulp-sdk.
 ```
-$cp -r ~/riscv/hello ~/pulpissimo/pulp-sdk
+$cp -r ~/pulpissimo-zcu102/hello ~/pulpissimo/pulp-sdk
 ```
 In the pulp-sdk directory, issue the following commands: 
 ```
