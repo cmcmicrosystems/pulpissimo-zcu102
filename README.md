@@ -2,7 +2,7 @@
 
 *Note:*
 - *CMC clients may submit their questions through CMC's online support form to get timely response.*
-- *Further development work relavent to RISC-V on zcu102 from the community is welcome to release through CMC's github.You may contribute back to this github repository by submitting a pull request.*
+- *Further development work(such as new applications or ips) relavent to RISC-V on zcu102 from the community is welcome to release through CMC's github.You may contribute back to this github repository by submitting a pull request.*
 - *CMC's clients are welcome to release their open source projects through CMC's github if they are willing share it with the community. Contact CMC for details.*
 ##
 This README provides instructions on how to setup the environment to compile the pulpissimo fpga platform and configure it on the Xilinx ZCU102 evaluation board. Pulpissimo is a 32-bit RI5CY (a RISC-V compatible core ) single-core System-on-a-Chip developed by the PULP team (Parallel processing Ultra-low Power platform).
